@@ -57,6 +57,7 @@ function App() {
       <div>
         <header>
           <h1>Color Battle</h1>
+
           <p>Dice Roll: {diceRoll}</p>
 
           {!winner ? (
