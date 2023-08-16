@@ -1,17 +1,11 @@
 import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Player from './components/Player'
+import NewGame from './components/NewGame'
 import './App.css'
 
-const Player = ({ attack, name, hitPoints, currentPlayer }) => {
-  return (
-    <div>
-      <h2>{name}</h2>
-      <p>Hitpoints: {hitPoints}</p>
-      {currentPlayer && <button onClick={attack}>Attack!</button>}
-    </div>
-  )
-}
+
 
 function App() {
   const [player1HitPoints, setPlayer1HitPoints] = useState(10)
@@ -40,15 +34,7 @@ function App() {
     }
   }
 
-  const handleNewGame = () => {
-    location.reload()
-  }
-
-  useEffect(() => {
-    if (winner) {
-      alert(`Player ${winner} wins!`)
-    }
-  }, [winner])
+  
 
 
 
@@ -71,7 +57,10 @@ function App() {
             </div>
           )}
         </header>
+        
       </div>
+      <NewGame />
+      
     </>
   )
 }

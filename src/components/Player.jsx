@@ -1,9 +1,16 @@
 import React from 'react'
 
-function Player() {
-  return (
-    <div>Player</div>
-  )
-}
+  
+    const Player = ({ attack, name, hitPoints, currentPlayer }) => {
+      return (
+        <div>
+          <h2>{name}</h2>
+          <p>Hitpoints: {hitPoints}</p>
+          {currentPlayer && <button onClick={attack}>Attack!</button>}
+        </div>
+      )
+    }
+  
+
 
 export default Player
