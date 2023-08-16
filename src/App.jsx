@@ -11,7 +11,9 @@ function App() {
       <div>
         <header>
           <h1>Color Battle</h1>
-          <h2>Player 1</h2>
+
+          <h2>Player 2</h2>
+
         </header>
       </div>
     </>
