@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.players-container{
+  display: flex;
+  justify-content: space-around;
+}

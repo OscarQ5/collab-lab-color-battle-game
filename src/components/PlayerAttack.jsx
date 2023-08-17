@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Player from "./Player.jsx"
 import NewGame from "./NewGame.jsx"
 
@@ -29,18 +29,27 @@ function PlayerAttack() {
             setCurrentPlayer(currentPlayer === 1 ? 2 : 1)
         }
     }
+    const handleNewGame = () => {
+        location.reload()
+    }
+
+    useEffect(() => {
+        if (winner) {
+          alert(`Player ${winner} wins!`)
+        }
+      }, [winner])
 
     return (
         <div>
             <p>Dice Roll: {diceRoll}</p>
             {!winner ? (
-                <div>
+                <div className='players-container'>
                     <Player name="Player 1" hitPoints={player1HitPoints} attack={handleAttack} currentPlayer={currentPlayer === 1} />
                     <Player name="Player 2" hitPoints={player2HitPoints} attack={handleAttack} currentPlayer={currentPlayer === 2} />
                 </div>
             ) : (
                 <div>
-                    <NewGame winner={winner}/>
+                    <NewGame handleNewGame={handleNewGame} />
                 </div>
             )}
 
